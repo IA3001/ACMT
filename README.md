@@ -83,3 +83,11 @@ typst watch main.typ
 
 - 新板子先放 `develop/` 下用 `r.bat`（`g++ -std=c++17`）验证，AC 后再精简进 `chapters/`
 - 依赖外部包仅 `@preview/codly:1.3.0`，字体建议安装「思源黑体（Source Han Sans SC）」
+
+## License
+
+本项目以 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans)（署名—非商业性使用—相同方式共享 4.0 国际）协议发布，完整法律文本见 [LICENSE](LICENSE)。
+
+- **署名**：使用时须保留作者署名
+- **非商业**：不得用于商业用途
+- **相同方式共享**：修改/衍生作品须以相同协议发布
