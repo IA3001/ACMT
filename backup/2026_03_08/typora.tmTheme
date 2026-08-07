@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>name</key>
+    <string>Typora Custom</string>
+    <key>settings</key>
+    <array>
+        <!-- 基础文本颜色（防止被莫名设为其他色） -->
+        <dict>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#000000</string>
+            </dict>
+        </dict>
+        <!-- 关键字 (紫色): for, if, while, return, break, continue, switch, do -->
+        <dict>
+            <key>scope</key>
+            <string>keyword.control, keyword.other, keyword.control.statement, keyword.control.conditional, keyword.control.repeat</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key><string>#770088</string>
+                <key>fontStyle</key><string>bold</string> <!-- 这里实现加粗 -->
+            </dict>
+        </dict>
+        <!-- 存储/声明 (紫色): struct, class, auto, const, static, public, protected, private, namespace, using, template, virtual, override -->
+        <dict>
+            <key>scope</key>
+            <string>storage.type, storage.modifier, storage.type.struct, storage.type.class, keyword.declaration</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key><string>#770088</string>
+                <key>fontStyle</key><string>bold</string> <!-- 这里实现加粗 -->
+            </dict>
+        </dict>
+        <!-- 内置基本类型 (绿色): int, void, bool, char, double, float, size_t -->
+        <dict>
+            <key>scope</key>
+            <string>storage.type.built-in, storage.type.primitive, support.type, entity.name.type</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key><string>#008855</string>
+                <key>fontStyle</key><string>bold</string> <!-- 这里实现加粗 -->
+            </dict>
+        </dict>
+        <!-- 函数名 (蓝色) -->
+        <dict>
+            <key>scope</key>
+            <string>entity.name.function, support.function, variable.function</string>
+            <key>settings</key>
+            <dict><key>foreground</key><string>#0000FF</string></dict>
+        </dict>
+        <!-- 数字 (深绿) -->
+        <dict>
+            <key>scope</key>
+            <string>constant.numeric</string>
+            <key>settings</key>
+            <dict><key>foreground</key><string>#116644</string></dict>
+        </dict>
+        <!-- 运算符 (红色) -->
+        <dict>
+            <key>scope</key>
+            <string>keyword.operator, punctuation.separator.operator</string>
+            <key>settings</key>
+            <dict><key>foreground</key><string>#981A1A</string></dict>
+        </dict>
+        <!-- 注释 (棕色) -->
+        <dict>
+            <key>scope</key>
+            <string>comment, punctuation.definition.comment</string>
+            <key>settings</key>
+            <dict><key>foreground</key><string>#AA5500</string></dict>
+        </dict>
+        <!-- 字符串 (红褐色) -->
+        <dict>
+            <key>scope</key>
+            <string>string</string>
+            <key>settings</key>
+            <dict><key>foreground</key><string>#A11515</string></dict>
+        </dict>
+    </array>
+</dict>
+</plist>
