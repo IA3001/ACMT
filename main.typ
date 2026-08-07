@@ -7,7 +7,7 @@
 #show: template.with(
   title: text(
     size:1em
-    )[ACM-XCPC Notebook]
+    )[ACM-XCPC Notebook v1.0.0]
 )
 
 // 目录样式定制
@@ -70,19 +70,19 @@
 // 按大类包含子文件
 // #include "chapters/test.typ"
 
-// #include "chapters/01_basic.typ"
-// #include "chapters/02_search.typ"
-// #include "chapters/03_dp.typ"
-// #include "chapters/04_string.typ"
-// // #include "chapters/05_math_numeric_theory.typ"
-// #include "chapters/05_math.typ"
+#include "chapters/01_basic.typ"
+#include "chapters/02_search.typ"
+#include "chapters/03_dp.typ"
+#include "chapters/04_string.typ"
+// #include "chapters/05_math_numeric_theory.typ"
+#include "chapters/05_math.typ"
 
-#include "chapters/06_ds.typ"
-#include "chapters/07_graph.typ"
-#include "chapters/08_geometry.typ"
-#include "chapters/09_others.typ"
-#include "chapters/10_topics.typ"
-#include "chapters/11_appendix.typ"
+// #include "chapters/06_ds.typ"
+// #include "chapters/07_graph.typ"
+// #include "chapters/08_geometry.typ"
+// #include "chapters/09_others.typ"
+// #include "chapters/10_topics.typ"
+// #include "chapters/11_appendix.typ"
 
 // #pagebreak(weak:true)
 // #note(title:"PS")[
