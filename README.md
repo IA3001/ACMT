@@ -45,7 +45,6 @@ typst watch mainA.typ
 ├── idea/                    # 思路笔记（如 网络流 vs 线性规划）
 ├── backup/                  # 历史快照备份（按日期分目录）
 ├── typora.tmTheme           # 代码高亮主题
-└── mainA.pdf / mainB.pdf    # 构建产物
 ```
 
 ## 章节一览
