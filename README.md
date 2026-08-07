@@ -8,21 +8,22 @@
 需要 [Typst](https://github.com/typst/typst/releases)（0.14 及以上），并已安装 `@preview/codly:1.3.0`（首次编译自动下载）。
 
 ```bash
-# 编译主文档（当前启用的是第 06–11 章，即 B 卷）
-typst compile main.typ mainB.pdf
+# 编译 A 卷（第 01–05 章：基础 / 搜索 / DP / 字符串 / 数学）
+typst compile mainA.typ mainA.pdf
+
+# 编译 B 卷（第 06–11 章：数据结构 / 图论 / 计算几何 / 杂项 / 专题 / 附录）
+typst compile mainB.typ mainB.pdf
 
 # 或预览（自动重编译）
-typst watch main.typ
+typst watch mainA.typ
 ```
-
-> 仓库根目录的 `mainA.pdf` / `mainB.pdf` 为历史构建产物：
-> A 卷 = 第 01–05 章（基础 / 搜索 / DP / 字符串 / 数学），B 卷 = 第 06–11 章（数据结构 / 图论 / 计算几何 / 杂项 / 专题 / 附录）。
-> 需要切换编译哪一卷时，在 `main.typ` 中注释 / 取消注释对应的 `#include` 即可。
 
 ## 目录结构
 
 ```
-├── main.typ                 # 入口：模板调用 + 目录 + 章节 include
+├── mainA.typ                # A 卷入口：第 01–05 章
+├── mainB.typ                # B 卷入口：第 06–11 章
+├── notebook.typ             # 共享排版骨架：模板调用 + 目录样式 + TODO 约定
 ├── config.typ               # 页面布局 / 字体 / 标题样式 / codly 代码块配置
 ├── lib.typ                  # 通用工具：#note、#theorem、#definition 等块与数学辅助
 ├── chapters/                # 正文章节（见下方章节列表）
@@ -72,7 +73,7 @@ typst watch main.typ
 
 ## TODO 标记约定
 
-正文中的 `TODO` 按严重程度分级（详见 `main.typ` 注释）：
+正文中的 `TODO` 按严重程度分级（详见 `notebook.typ` 注释）：
 
 - `TODO !`  写个公式即可，不大篇幅展开
 - `TODO !!` 临时写的，需要后续细化
