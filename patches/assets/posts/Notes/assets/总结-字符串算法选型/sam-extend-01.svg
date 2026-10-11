@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#344b63"/></marker><marker id="l" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#bd7048"/></marker><style>text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#1d2a38}.h{font-size:38px;font-weight:700}.sub{font-size:22px;fill:#536579}.pt{font-size:27px;font-weight:700}.node{fill:#f8fbff;stroke:#344b63;stroke-width:3}.clone{fill:#fff2e6;stroke:#bd7048;stroke-width:3}.nt{font-size:20px;font-weight:700;text-anchor:middle}.edge{stroke:#344b63;stroke-width:2.7;fill:none;marker-end:url(#a)}.link{stroke:#bd7048;stroke-width:2.7;fill:none;marker-end:url(#l)}.lab{font-size:22px;font-weight:700;text-anchor:middle;paint-order:stroke;stroke:#fff;stroke-width:6px}.foot{font-size:22px}.box{fill:#fff;stroke:#cbd5df;stroke-width:2}</style></defs><rect width="1600" height="1000" fill="#f3f6fa"/><text class="h" x="35" y="52">Extend 1：追加 b，得到 b</text><text class="sub" x="35" y="84">处理完此字符后的快照　·　状态 2 个　·　last=2　·　橙色状态为 Clone</text><rect class="box" x="25" y="105" width="760" height="560" rx="14"/><rect class="box" x="815" y="105" width="760" height="560" rx="14"/><text class="pt" x="55" y="145">SAM 自动机：字符转移</text><text class="pt" x="845" y="145">Link 树：link[v] → v</text>
+<path class="edge" d="M352.7053959024126 179.69709451408553 L149.0555462974318 289.3547058398444"/>
+<path class="link" d="M1172.4587968874198 179.22962160816647 L929.3180549262952 304.85233828808083"/>
+<circle class="node" cx="380" cy="165" r="29"/><text class="nt" x="380" y="162">1</text><text class="nt" x="380" y="182" style="font-size:12px">len 0</text>
+<circle class="node" cx="1200" cy="165" r="29"/><text class="nt" x="1200" y="162">1</text><text class="nt" x="1200" y="182" style="font-size:12px">len 0</text>
+<circle class="node" cx="120" cy="305" r="29"/><text class="nt" x="120" y="302">2</text><text class="nt" x="120" y="322" style="font-size:12px">len 1</text>
+<circle class="node" cx="900" cy="320" r="29"/><text class="nt" x="900" y="317">2</text><text class="nt" x="900" y="337" style="font-size:12px">len 1</text>
+<text class="lab" x="230" y="225">b</text>
+<text class="foot" x="40" y="710">转移：1-b→2</text>
+<text class="foot" x="40" y="740">Link：2→1</text>
+<text class="foot" x="40" y="778">新建 cur=2，len=1；p=1，补 1 -b→ 2。</text>
+<text class="foot" x="40" y="808">p 沿 link 到空状态 0；没有旧转移，设 link[2]=1，last=2。</text>
+</svg>

@@ -18,6 +18,16 @@ typst compile mainB.typ mainB.pdf
 typst watch mainA.typ
 ```
 
+## ACMT 扩展卷
+
+Blog 内容整理为三册可单独编译和打印的 Typst 扩展卷，沿用本仓库的 ACMT 排版配置：
+
+- CONTEST：比赛与补题记录，263 页
+- ALGO：手写算法笔记，199 页
+- Notes / Others：阅读笔记与杂项，235 页，含 8 页手写补充页
+
+在 GitHub Releases 下载 PDF；扩展卷的 Typst 源文件、图片副本和编译说明见 [`patches/README.md`](patches/README.md)。
+
 ## 目录结构
 
 ```

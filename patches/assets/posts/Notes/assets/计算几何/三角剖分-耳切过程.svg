@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="370" viewBox="0 0 1200 370">
+  <defs>
+    <style>
+      text { font-family: "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; fill: #243247; }
+      .title { font-size: 21px; font-weight: 700; }
+      .caption { font-size: 15px; }
+      .vertex { font-size: 16px; font-style: italic; font-weight: 600; }
+      .border { fill: #e8f1fb; stroke: #26384d; stroke-width: 2.5; stroke-linejoin: round; }
+      .ear { fill: #ffcc80; stroke: none; }
+      .diag { stroke: #2878c8; stroke-width: 3; stroke-linecap: round; }
+      .thin { stroke: #aab7c6; stroke-width: 1.5; }
+      .dot { fill: #26384d; }
+    </style>
+  </defs>
+  <rect width="1200" height="370" rx="12" fill="#ffffff"/>
+  <text x="600" y="32" text-anchor="middle" class="title">耳切法：每次切下一个耳，剩余部分仍是简单多边形</text>
+
+  <!-- Step 1: original hexagon; clip ear FAB, diagonal FB -->
+  <g transform="translate(15,0)">
+    <text x="135" y="62" text-anchor="middle" class="title">① 切 A</text>
+    <path class="border" d="M20 80 L120 100 L155 160 L220 80 L220 230 L20 230 Z"/>
+    <path class="ear" d="M20 80 L20 230 L220 230 Z"/>
+    <path class="diag" d="M20 80 L220 230"/>
+    <circle class="dot" cx="20" cy="230" r="4"/><text class="vertex" x="5" y="252">A</text>
+    <circle class="dot" cx="220" cy="230" r="4"/><text class="vertex" x="225" y="249">B</text>
+    <circle class="dot" cx="220" cy="80" r="4"/><text class="vertex" x="228" y="76">C</text>
+    <circle class="dot" cx="155" cy="160" r="4"/><text class="vertex" x="160" y="178">D</text>
+    <circle class="dot" cx="120" cy="100" r="4"/><text class="vertex" x="112" y="92">E</text>
+    <circle class="dot" cx="20" cy="80" r="4"/><text class="vertex" x="5" y="73">F</text>
+    <text x="135" y="292" text-anchor="middle" class="caption">切 △FAB，新增对角线 FB</text>
+    <text x="135" y="316" text-anchor="middle" class="caption">剩余：B-C-D-E-F</text>
+  </g>
+
+  <path class="thin" d="M300 52 V330"/>
+
+  <!-- Step 2: remaining polygon BCDEF; clip BCD; diagonal BD -->
+  <g transform="translate(310,0)">
+    <text x="135" y="62" text-anchor="middle" class="title">② 切 C</text>
+    <path class="border" d="M20 80 L120 100 L155 160 L220 80 L220 230 Z"/>
+    <path class="ear" d="M220 230 L220 80 L155 160 Z"/>
+    <path class="diag" d="M220 230 L155 160"/>
+    <circle class="dot" cx="20" cy="80" r="4"/><text class="vertex" x="5" y="73">F</text>
+    <circle class="dot" cx="120" cy="100" r="4"/><text class="vertex" x="112" y="92">E</text>
+    <circle class="dot" cx="155" cy="160" r="4"/><text class="vertex" x="160" y="178">D</text>
+    <circle class="dot" cx="220" cy="80" r="4"/><text class="vertex" x="228" y="76">C</text>
+    <circle class="dot" cx="220" cy="230" r="4"/><text class="vertex" x="225" y="249">B</text>
+    <text x="135" y="292" text-anchor="middle" class="caption">切 △BCD，新增对角线 BD</text>
+    <text x="135" y="316" text-anchor="middle" class="caption">剩余：B-D-E-F</text>
+  </g>
+
+  <path class="thin" d="M600 52 V330"/>
+
+  <!-- Step 3: remaining BDEF; clip DEF; diagonal DF -->
+  <g transform="translate(605,0)">
+    <text x="135" y="62" text-anchor="middle" class="title">③ 切 E</text>
+    <path class="border" d="M20 80 L120 100 L155 160 L220 230 Z"/>
+    <path class="ear" d="M20 80 L120 100 L155 160 Z"/>
+    <path class="diag" d="M20 80 L155 160"/>
+    <circle class="dot" cx="20" cy="80" r="4"/><text class="vertex" x="5" y="73">F</text>
+    <circle class="dot" cx="120" cy="100" r="4"/><text class="vertex" x="112" y="92">E</text>
+    <circle class="dot" cx="155" cy="160" r="4"/><text class="vertex" x="160" y="178">D</text>
+    <circle class="dot" cx="220" cy="230" r="4"/><text class="vertex" x="225" y="249">B</text>
+    <text x="135" y="292" text-anchor="middle" class="caption">切 △DEF，新增对角线 DF</text>
+    <text x="135" y="316" text-anchor="middle" class="caption">剩余：B-D-F</text>
+  </g>
+
+  <path class="thin" d="M895 52 V330"/>
+
+  <!-- Final triangulation: four exact triangles -->
+  <g transform="translate(900,0)">
+    <text x="135" y="62" text-anchor="middle" class="title">④ 完成</text>
+    <path d="M20 80 L20 230 L220 230 Z" fill="#ffcc80"/>
+    <path d="M220 230 L220 80 L155 160 Z" fill="#f6a6a6"/>
+    <path d="M155 160 L120 100 L20 80 Z" fill="#b8dfbd"/>
+    <path d="M20 80 L155 160 L220 230 Z" fill="#c9b8e8"/>
+    <path d="M20 80 L120 100 L155 160 L220 80 L220 230 L20 230 Z" fill="none" stroke="#26384d" stroke-width="2.5" stroke-linejoin="round"/>
+    <path class="diag" d="M20 80 L220 230 M220 230 L155 160 M155 160 L20 80"/>
+    <circle class="dot" cx="20" cy="230" r="4"/><text class="vertex" x="5" y="252">A</text>
+    <circle class="dot" cx="220" cy="230" r="4"/><text class="vertex" x="225" y="249">B</text>
+    <circle class="dot" cx="220" cy="80" r="4"/><text class="vertex" x="228" y="76">C</text>
+    <circle class="dot" cx="155" cy="160" r="4"/><text class="vertex" x="160" y="178">D</text>
+    <circle class="dot" cx="120" cy="100" r="4"/><text class="vertex" x="112" y="92">E</text>
+    <circle class="dot" cx="20" cy="80" r="4"/><text class="vertex" x="5" y="73">F</text>
+    <text x="135" y="292" text-anchor="middle" class="caption">4 个三角形，3 条内部对角线</text>
+    <text x="135" y="316" text-anchor="middle" class="caption">n=6：T=n−2，d=n−3</text>
+  </g>
+</svg>

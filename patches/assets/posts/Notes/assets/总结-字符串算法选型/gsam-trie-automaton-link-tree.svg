@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="1690" viewBox="0 0 2800 1690"><defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#344b63"/></marker><marker id="barr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#43835d"/></marker><marker id="linkarr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#bd7048"/></marker><style>text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#1d2a38}.title{font-size:42px;font-weight:700}.sub{font-size:23px;fill:#526579}.head{font-size:30px;font-weight:700}.small{font-size:20px;fill:#526579}.edge{stroke:#344b63;stroke-width:3;fill:none;marker-end:url(#arr)}.aEdge{stroke:#477ab5;stroke-width:3;fill:none;marker-end:url(#arr)}.bEdge{stroke:#43835d;stroke-width:3;fill:none;marker-end:url(#barr)}.shared{stroke:#8068ae;stroke-width:3.5;fill:none;marker-end:url(#arr)}.link{stroke:#bd7048;stroke-width:3;fill:none;marker-end:url(#linkarr)}.lab{font-size:24px;font-weight:700;text-anchor:middle;paint-order:stroke;stroke:white;stroke-width:7px}.node{stroke-width:3}.aNode{fill:#eaf3ff;stroke:#477ab5}.bNode{fill:#e9f7ef;stroke:#43835d}.abNode{fill:#f0ebff;stroke:#8068ae}.clone{fill:#fff1e4;stroke:#bf7548;stroke-width:4}.nt{font-size:24px;font-weight:700;text-anchor:middle}.panel{fill:#fff;stroke:#cbd5df;stroke-width:2}.foot{font-size:22px}.terminal{font-size:18px;font-weight:700;text-anchor:middle}</style></defs><rect width="2800" height="1690" fill="#f3f6fa"/><text class="title" x="35" y="55">GSAM：Trie BFS 构造、自动机转移与 Link 树</text><text class="sub" x="35" y="88">Texts = banana、bandana。共享前缀 ban；Trie 阻止跨串拼接，BFS 扩展后产生 3 个 Clone。</text><rect class="panel" x="20" y="110" width="830" height="1330" rx="18"/><rect class="panel" x="865" y="110" width="940" height="1330" rx="18"/><rect class="panel" x="1820" y="110" width="960" height="1330" rx="18"/><text class="head" x="55" y="160">① 源 Trie</text><text class="small" x="55" y="192">紫色：两个 Text 共享前缀；蓝 A / 绿 B：分支与终点</text><text class="head" x="900" y="160">② GSAM 自动机</text><text class="small" x="900" y="192">实线为字符转移；节点色表示来源 A/B/AB；橙色节点为 Clone</text><text class="head" x="1855" y="160">③ Link 树</text><text class="small" x="1855" y="192">边 link[v] → v；节点标来源集合（Trie 前缀标记沿子树 OR）</text>
+<path class="shared" d="M445 263 L445 325"/>
+<text class="lab" x="445" y="302">b</text>
+<path class="shared" d="M445 403 L445 465"/>
+<text class="lab" x="445" y="442">a</text>
+<path class="shared" d="M445 543 L445 605"/>
+<text class="lab" x="445" y="582">n</text>
+<path class="aEdge" d="M415.7391806855886 669.2446788605123 L300.8008624362225 764.479285409987"/>
+<text class="lab" x="357.5" y="724.5">a</text>
+<path class="bEdge" d="M474.2608193144114 669.2446788605123 L589.1991375637775 764.479285409987"/>
+<text class="lab" x="532.5" y="724.5">d</text>
+<path class="aEdge" d="M270 828 L270 895"/>
+<text class="lab" x="270" y="869.5">n</text>
+<path class="aEdge" d="M270 973 L270 1040"/>
+<text class="lab" x="270" y="1014.5">a</text>
+<path class="bEdge" d="M620 828 L620 895"/>
+<text class="lab" x="620" y="869.5">a</text>
+<path class="bEdge" d="M620 973 L620 1040"/>
+<text class="lab" x="620" y="1014.5">n</text>
+<path class="bEdge" d="M620 1118 L620 1185"/>
+<text class="lab" x="620" y="1159.5">a</text>
+<circle class="node abNode" cx="445" cy="225" r="38"/><text class="nt" x="445" y="221">1</text><text class="small" x="445" y="245" text-anchor="middle">root</text>
+<circle class="node abNode" cx="445" cy="365" r="38"/><text class="nt" x="445" y="361">2</text><text class="small" x="445" y="385" text-anchor="middle">b</text>
+<circle class="node abNode" cx="445" cy="505" r="38"/><text class="nt" x="445" y="501">3</text><text class="small" x="445" y="525" text-anchor="middle">ba</text>
+<circle class="node abNode" cx="445" cy="645" r="38"/><text class="nt" x="445" y="641">4</text><text class="small" x="445" y="665" text-anchor="middle">ban</text>
+<circle class="node aNode" cx="270" cy="790" r="38"/><text class="nt" x="270" y="786">5</text><text class="small" x="270" y="810" text-anchor="middle">bana</text>
+<circle class="node aNode" cx="270" cy="935" r="38"/><text class="nt" x="270" y="931">6</text><text class="small" x="270" y="955" text-anchor="middle">banan</text>
+<circle class="node aNode" cx="270" cy="1080" r="38"/><text class="nt" x="270" y="1076">7</text><text class="small" x="270" y="1100" text-anchor="middle">banana</text>
+<text class="terminal" x="312" y="1055">★A</text>
+<circle class="node bNode" cx="620" cy="790" r="38"/><text class="nt" x="620" y="786">8</text><text class="small" x="620" y="810" text-anchor="middle">band</text>
+<circle class="node bNode" cx="620" cy="935" r="38"/><text class="nt" x="620" y="931">9</text><text class="small" x="620" y="955" text-anchor="middle">banda</text>
+<circle class="node bNode" cx="620" cy="1080" r="38"/><text class="nt" x="620" y="1076">10</text><text class="small" x="620" y="1100" text-anchor="middle">bandan</text>
+<circle class="node bNode" cx="620" cy="1225" r="38"/><text class="nt" x="620" y="1221">11</text><text class="small" x="620" y="1245" text-anchor="middle">bandana</text>
+<text class="terminal" x="662" y="1200">★B</text>
+<text class="small" x="55" y="1350">Trie BFS 节点顺序</text><text class="head" x="55" y="1390">1 → 2 → 3 → 4 → 5 → 8 → 6 → 9 → 7 → 10 → 11</text>
+<path class="edge" d="M1285.045956193767 234.9068716232464 L1016.7937303223505 349.3085561860564"/>
+<text class="lab" x="1130" y="290">b</text>
+<path class="edge" d="M1297.0333137077791 250.27426829429106 L1234.1754592549692 333.13234916390417"/>
+<text class="lab" x="1268" y="245">a</text>
+<path class="edge" d="M1345.366710598577 248.29363874456664 L1423.298199369919 335.21722237414036"/>
+<text class="lab" x="1400" y="250">n</text>
+<path class="edge" d="M1355.3801669497536 233.8652005613899 L1652.7577190002594 350.4050520406422"/>
+<text class="lab" x="1580" y="280">d</text>
+<path class="edge" d="M980 403 L980 470"/>
+<text class="lab" x="980" y="444.5">a</text>
+<path class="edge" d="M980 548 L980 615"/>
+<text class="lab" x="980" y="589.5">n</text>
+<path class="edge" d="M980 693 L980 760"/>
+<text class="lab" x="980" y="734.5">a</text>
+<path class="edge" d="M1015.1786715544511 640.6312468298721 L1652.9698194163673 380.1250033369767"/>
+<text class="lab" x="1325" y="650">d</text>
+<path class="edge" d="M980 838 L980 905"/>
+<text class="lab" x="980" y="879.5">n</text>
+<path class="edge" d="M980 983 L980 1050"/>
+<text class="lab" x="980" y="1024.5">a</text>
+<path class="edge" d="M1690 403 L1690 470"/>
+<text class="lab" x="1690" y="444.5">a</text>
+<path class="edge" d="M1690 548 L1690 615"/>
+<text class="lab" x="1690" y="589.5">n</text>
+<path class="edge" d="M1690 693 L1690 760"/>
+<text class="lab" x="1690" y="734.5">a</text>
+<path class="edge" d="M1248 365 L1410 365"/>
+<text class="lab" x="1330" y="372">n</text>
+<path class="edge" d="M1450 403 L1450 470"/>
+<text class="lab" x="1450" y="444.5">a</text>
+<path class="edge" d="M1488 365 L1650 365"/>
+<text class="lab" x="1590" y="380">d</text>
+<path class="edge" d="M1422.111617080598 535.8115884466805 L1009.3561925467388 917.829906898231"/>
+<text class="lab" x="1215" y="734.5">n</text>
+<circle class="node abNode" cx="1320" cy="220" r="38"/><text class="nt" x="1320" y="216">1</text><text class="small" x="1320" y="241" text-anchor="middle">len 0</text>
+<circle class="node abNode" cx="980" cy="365" r="38"/><text class="nt" x="980" y="361">2</text><text class="small" x="980" y="386" text-anchor="middle">len 1</text>
+<circle class="node abNode" cx="980" cy="510" r="38"/><text class="nt" x="980" y="506">3</text><text class="small" x="980" y="531" text-anchor="middle">len 2</text>
+<circle class="node abNode" cx="980" cy="655" r="38"/><text class="nt" x="980" y="651">4</text><text class="small" x="980" y="676" text-anchor="middle">len 3</text>
+<circle class="node aNode" cx="980" cy="800" r="38"/><text class="nt" x="980" y="796">5</text><text class="small" x="980" y="821" text-anchor="middle">len 4</text>
+<circle class="node aNode" cx="980" cy="945" r="38"/><text class="nt" x="980" y="941">6</text><text class="small" x="980" y="966" text-anchor="middle">len 5</text>
+<circle class="node aNode" cx="980" cy="1090" r="38"/><text class="nt" x="980" y="1086">7</text><text class="small" x="980" y="1111" text-anchor="middle">len 6</text>
+<circle class="node bNode" cx="1690" cy="365" r="38"/><text class="nt" x="1690" y="361">8</text><text class="small" x="1690" y="386" text-anchor="middle">len 4</text>
+<circle class="node bNode" cx="1690" cy="510" r="38"/><text class="nt" x="1690" y="506">9</text><text class="small" x="1690" y="531" text-anchor="middle">len 5</text>
+<circle class="node bNode" cx="1690" cy="655" r="38"/><text class="nt" x="1690" y="651">10</text><text class="small" x="1690" y="676" text-anchor="middle">len 6</text>
+<circle class="node bNode" cx="1690" cy="800" r="38"/><text class="nt" x="1690" y="796">11</text><text class="small" x="1690" y="821" text-anchor="middle">len 7</text>
+<circle class="node clone" cx="1210" cy="365" r="38"/><text class="nt" x="1210" y="361">12</text><text class="small" x="1210" y="386" text-anchor="middle">len 1 C</text>
+<circle class="node clone" cx="1450" cy="365" r="38"/><text class="nt" x="1450" y="361">13</text><text class="small" x="1450" y="386" text-anchor="middle">len 2 C</text>
+<circle class="node clone" cx="1450" cy="510" r="38"/><text class="nt" x="1450" y="506">14</text><text class="small" x="1450" y="531" text-anchor="middle">len 3 C</text>
+<path class="link" d="M2275.2945283291024 235.4767643937786 L1976.53207544305 368.7086690591804"/>
+<path class="link" d="M2282.731933718124 246.46606433240908 L2168.7032276651325 357.1409849132536"/>
+<path class="link" d="M2318.9528009736173 256.9303040161708 L2340.57599897514 346.1259957724518"/>
+<path class="link" d="M2342.0845179669514 240.36132870979614 L2536.226823192683 363.56702241074095"/>
+<path class="link" d="M2338.2768214745774 421.146467120053 L2302.3401879214975 531.9510872420495"/>
+<path class="link" d="M2361.7231785254226 421.146467120053 L2397.6598120785025 531.9510872420495"/>
+<path class="link" d="M2376.499488472531 412.235585374546 L2502.105801607862 541.3309627636357"/>
+<path class="link" d="M2533.370697935555 395.1140610177944 L1938.5571600678365 559.353619981269"/>
+<path class="link" d="M2534.1228416969566 397.52315903030757 L2077.765429792677 556.8177273365184"/>
+<path class="link" d="M2535.666930022456 401.28619986114256 L2216.1400736605724 552.8566317251131"/>
+<path class="link" d="M2504.2253560961435 597.9225308958445 L2377.1312041093224 735.6078622149005"/>
+<path class="link" d="M2518.824737744174 606.3196023314341 L2481.763433953501 726.768839651122"/>
+<path class="link" d="M2541.175262255826 606.3196023314341 L2578.236566046499 726.768839651122"/>
+<circle class="node abNode" cx="2310" cy="220" r="38"/><text class="nt" x="2310" y="216">1</text><text class="small" x="2310" y="241" text-anchor="middle">A+B</text>
+<circle class="node abNode" cx="1940" cy="385" r="38"/><text class="nt" x="1940" y="381">2</text><text class="small" x="1940" y="406" text-anchor="middle">A+B</text>
+<circle class="node abNode" cx="2290" cy="570" r="38"/><text class="nt" x="2290" y="566">3</text><text class="small" x="2290" y="591" text-anchor="middle">A+B</text>
+<circle class="node abNode" cx="1900" cy="570" r="38"/><text class="nt" x="1900" y="566">4</text><text class="small" x="1900" y="591" text-anchor="middle">A+B</text>
+<circle class="node aNode" cx="2350" cy="765" r="38"/><text class="nt" x="2350" y="761">5</text><text class="small" x="2350" y="786" text-anchor="middle">A</text>
+<circle class="node aNode" cx="2040" cy="570" r="38"/><text class="nt" x="2040" y="566">6</text><text class="small" x="2040" y="591" text-anchor="middle">A</text>
+<circle class="node aNode" cx="2470" cy="765" r="38"/><text class="nt" x="2470" y="761">7</text><text class="small" x="2470" y="786" text-anchor="middle">A</text>
+<circle class="node bNode" cx="2140" cy="385" r="38"/><text class="nt" x="2140" y="381">8</text><text class="small" x="2140" y="406" text-anchor="middle">B</text>
+<circle class="node bNode" cx="2410" cy="570" r="38"/><text class="nt" x="2410" y="566">9</text><text class="small" x="2410" y="591" text-anchor="middle">B</text>
+<circle class="node bNode" cx="2180" cy="570" r="38"/><text class="nt" x="2180" y="566">10</text><text class="small" x="2180" y="591" text-anchor="middle">B</text>
+<circle class="node bNode" cx="2590" cy="765" r="38"/><text class="nt" x="2590" y="761">11</text><text class="small" x="2590" y="786" text-anchor="middle">B</text>
+<circle class="node clone" cx="2350" cy="385" r="38"/><text class="nt" x="2350" y="381">12</text><text class="small" x="2350" y="406" text-anchor="middle">A+B C</text>
+<circle class="node clone" cx="2570" cy="385" r="38"/><text class="nt" x="2570" y="381">13</text><text class="small" x="2570" y="406" text-anchor="middle">A+B C</text>
+<circle class="node clone" cx="2530" cy="570" r="38"/><text class="nt" x="2530" y="566">14</text><text class="small" x="2530" y="591" text-anchor="middle">A+B C</text>
+<text class="small" x="1855" y="970">根 1 的孩子：2、8、12、13。</text><text class="small" x="1855" y="1005">12 的孩子：3、9、14；13 的孩子：4、6、10。</text><text class="small" x="1855" y="1040">14 的孩子：5、7、11。</text><text class="small" x="1855" y="1085">状态 4 = ban：来源 A+B。</text><text class="small" x="1855" y="1120">Clone 12/13/14 分别代表 a/an/ana。</text>
+<rect class="panel" x="20" y="1455" width="2760" height="220" rx="16"/><text class="head" x="50" y="1495">BFS 扩展顺序与三次 Clone</text><text class="foot" x="50" y="1530">Trie 边：1-b→2，2-a→3，3-n→4，4-a→5，4-d→8，5-n→6，8-a→9，6-a→7，9-n→10，10-a→11。</text><text class="foot" x="50" y="1567">① 扩展 4-a→5：p=1，q=3（ba，len=2）；Clone 12 ← q=3，len=1；改 1-a→3 为 1-a→12，link[3]=link[5]=12。</text><text class="foot" x="50" y="1604">② 扩展 5-n→6：p=12，q=4（ban，len=3）；Clone 13 ← q=4，len=2；改 12-n→4 为 12-n→13，link[4]=link[6]=13。</text><text class="foot" x="50" y="1641">③ 扩展 6-a→7：p=13，q=5（bana，len=4）；Clone 14 ← q=5，len=3；改 13-a→5 为 13-a→14，link[5]=link[7]=14。</text></svg>

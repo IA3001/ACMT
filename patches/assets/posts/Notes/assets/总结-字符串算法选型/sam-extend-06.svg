@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#344b63"/></marker><marker id="l" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#bd7048"/></marker><style>text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#1d2a38}.h{font-size:38px;font-weight:700}.sub{font-size:22px;fill:#536579}.pt{font-size:27px;font-weight:700}.node{fill:#f8fbff;stroke:#344b63;stroke-width:3}.clone{fill:#fff2e6;stroke:#bd7048;stroke-width:3}.nt{font-size:20px;font-weight:700;text-anchor:middle}.edge{stroke:#344b63;stroke-width:2.7;fill:none;marker-end:url(#a)}.link{stroke:#bd7048;stroke-width:2.7;fill:none;marker-end:url(#l)}.lab{font-size:22px;font-weight:700;text-anchor:middle;paint-order:stroke;stroke:#fff;stroke-width:6px}.foot{font-size:22px}.box{fill:#fff;stroke:#cbd5df;stroke-width:2}</style></defs><rect width="1600" height="1000" fill="#f3f6fa"/><text class="h" x="35" y="52">Extend 6：追加 a，得到 banana</text><text class="sub" x="35" y="84">处理完此字符后的快照　·　状态 10 个　·　last=9　·　橙色状态为 Clone</text><rect class="box" x="25" y="105" width="760" height="560" rx="14"/><rect class="box" x="815" y="105" width="760" height="560" rx="14"/><text class="pt" x="55" y="145">SAM 自动机：字符转移</text><text class="pt" x="845" y="145">Link 树：link[v] → v</text>
+<path class="edge" d="M352.7053959024126 179.69709451408553 L149.0555462974318 289.3547058398444"/>
+<path class="edge" d="M380 196 L380 272"/>
+<path class="edge" d="M407.5203904749168 179.269832098105 L620.7041004621854 289.809533572985"/>
+<path class="edge" d="M120 336 L120 422"/>
+<path class="edge" d="M120 486 L120 562"/>
+<path class="edge" d="M151 595 L307 595"/>
+<path class="edge" d="M371 595 L527 595"/>
+<path class="edge" d="M411 305 L617 305"/>
+<path class="edge" d="M591 595 L697 595"/>
+<path class="edge" d="M650 336 L650 422"/>
+<path class="edge" d="M633.2365146692815 481.07653273667313 L577.8450005133454 567.2411103125737"/>
+<path class="link" d="M1172.4587968874198 179.22962160816647 L929.3180549262952 304.85233828808083"/>
+<path class="link" d="M1178.7750606884144 342.5942902349136 L1067.5942902349136 460.94801362089845"/>
+<path class="link" d="M1488.6377399301427 348.84266017732983 L1447.0953091066222 454.29652303703597"/>
+<path class="link" d="M1282.437606490501 510.54529965018037 L1208.695451155273 617.8066165014209"/>
+<path class="link" d="M1200 196 L1200 287"/>
+<path class="link" d="M1508.990229253769 349.6677565374377 L1540.4297559556653 453.41819465369537"/>
+<path class="link" d="M1227.5412031125802 179.22962160816647 L1470.6819450737048 304.85233828808083"/>
+<path class="link" d="M1316.4299671400986 511.2879474241577 L1382.510034979895 617.0160559678321"/>
+<path class="link" d="M1216.0673531988937 346.51113277817456 L1282.8960433689197 456.7784715587174"/>
+<circle class="node" cx="380" cy="165" r="29"/><text class="nt" x="380" y="162">1</text><text class="nt" x="380" y="182" style="font-size:12px">len 0</text>
+<circle class="node" cx="1200" cy="165" r="29"/><text class="nt" x="1200" y="162">1</text><text class="nt" x="1200" y="182" style="font-size:12px">len 0</text>
+<circle class="node" cx="120" cy="305" r="29"/><text class="nt" x="120" y="302">2</text><text class="nt" x="120" y="322" style="font-size:12px">len 1</text>
+<circle class="node" cx="900" cy="320" r="29"/><text class="nt" x="900" y="317">2</text><text class="nt" x="900" y="337" style="font-size:12px">len 1</text>
+<circle class="node" cx="120" cy="455" r="29"/><text class="nt" x="120" y="452">3</text><text class="nt" x="120" y="472" style="font-size:12px">len 2</text>
+<circle class="node" cx="1045" cy="485" r="29"/><text class="nt" x="1045" y="482">3</text><text class="nt" x="1045" y="502" style="font-size:12px">len 2</text>
+<circle class="node" cx="120" cy="595" r="29"/><text class="nt" x="120" y="592">4</text><text class="nt" x="120" y="612" style="font-size:12px">len 3</text>
+<circle class="node" cx="1435" cy="485" r="29"/><text class="nt" x="1435" y="482">4</text><text class="nt" x="1435" y="502" style="font-size:12px">len 3</text>
+<circle class="node" cx="340" cy="595" r="29"/><text class="nt" x="340" y="592">5</text><text class="nt" x="340" y="612" style="font-size:12px">len 4</text>
+<circle class="node" cx="1190" cy="645" r="29"/><text class="nt" x="1190" y="642">5</text><text class="nt" x="1190" y="662" style="font-size:12px">len 4</text>
+<circle class="clone" cx="380" cy="305" r="29"/><text class="nt" x="380" y="302">6</text><text class="nt" x="380" y="322" style="font-size:12px">len 1 C</text>
+<circle class="clone" cx="1200" cy="320" r="29"/><text class="nt" x="1200" y="317">6</text><text class="nt" x="1200" y="337" style="font-size:12px">len 1 C</text>
+<circle class="node" cx="560" cy="595" r="29"/><text class="nt" x="560" y="592">7</text><text class="nt" x="560" y="612" style="font-size:12px">len 5</text>
+<circle class="node" cx="1550" cy="485" r="29"/><text class="nt" x="1550" y="482">7</text><text class="nt" x="1550" y="502" style="font-size:12px">len 5</text>
+<circle class="clone" cx="650" cy="305" r="29"/><text class="nt" x="650" y="302">8</text><text class="nt" x="650" y="322" style="font-size:12px">len 2 C</text>
+<circle class="clone" cx="1500" cy="320" r="29"/><text class="nt" x="1500" y="317">8</text><text class="nt" x="1500" y="337" style="font-size:12px">len 2 C</text>
+<circle class="node" cx="730" cy="595" r="29"/><text class="nt" x="730" y="592">9</text><text class="nt" x="730" y="612" style="font-size:12px">len 6</text>
+<circle class="node" cx="1400" cy="645" r="29"/><text class="nt" x="1400" y="642">9</text><text class="nt" x="1400" y="662" style="font-size:12px">len 6</text>
+<circle class="clone" cx="650" cy="455" r="29"/><text class="nt" x="650" y="452">10</text><text class="nt" x="650" y="472" style="font-size:12px">len 3 C</text>
+<circle class="clone" cx="1300" cy="485" r="29"/><text class="nt" x="1300" y="482">10</text><text class="nt" x="1300" y="502" style="font-size:12px">len 3 C</text>
+<text class="lab" x="230" y="225">b</text>
+<text class="lab" x="380" y="242">a</text>
+<text class="lab" x="515" y="242">n</text>
+<text class="lab" x="120" y="387">a</text>
+<text class="lab" x="120" y="532">n</text>
+<text class="lab" x="230" y="602">a</text>
+<text class="lab" x="450" y="602">n</text>
+<text class="lab" x="515" y="312">n</text>
+<text class="lab" x="645" y="602">a</text>
+<text class="lab" x="650" y="387">a</text>
+<text class="lab" x="605" y="532">n</text>
+<text class="foot" x="40" y="710">转移：1-b→2，1-a→6，1-n→8，2-a→3，3-n→4，4-a→5，5-n→7</text>
+<text class="foot" x="40" y="740">转移：6-n→8，7-a→9，8-a→10，10-n→7</text>
+<text class="foot" x="40" y="770">Link：2→1，3→6，4→8，5→10，6→1，7→8，8→1，9→10，10→6</text>
+<text class="foot" x="40" y="808">新建 cur=9，补 7 -a→ 9；p 从 7 跳到 8，遇到旧 q=5（代表 bana，len=4）。</text>
+<text class="foot" x="40" y="838">Clone 10 ← q=5：复制 q 的转移和 link[5]，设 len[10]=len[8]+1=3。</text>
+<text class="foot" x="40" y="868">把 8 -a→ 5 改为 8 -a→ 10；设 link[5]=link[9]=10，last=9。</text>
+</svg>

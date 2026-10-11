@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1120" viewBox="0 0 1440 1120">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#53647a"/></marker>
+    <style>
+      text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#172033}.title{font-size:32px;font-weight:700}.head{font-size:24px;font-weight:700}.body{font-size:19px}.small{font-size:16px}.formula{font-size:19px;font-family:Consolas,"Microsoft YaHei",sans-serif}.card{fill:#fff;stroke:#cbd5e1;stroke-width:2}.axis{stroke:#94a3b8;stroke-width:2}.old{stroke:#e4572e;stroke-width:5;fill:none}.new{stroke:#2676c9;stroke-width:5;fill:none}.dash{stroke:#68788d;stroke-width:2;stroke-dasharray:7 6;fill:none}.arrow{stroke:#53647a;stroke-width:2.5;fill:none;marker-end:url(#arr)}.origpt{fill:#e4572e}.newpt{fill:#2676c9}.center{fill:#111827}.grid{stroke:#e6ebf2;stroke-width:1}
+    </style>
+  </defs>
+  <rect width="1440" height="1120" fill="#f3f6fa"/>
+  <text x="720" y="48" text-anchor="middle" class="title">圆反演：用三个具体例子看懂图形怎么变</text>
+  <text x="720" y="82" text-anchor="middle" class="body">固定 O 和 R；每个点 P 沿 OP 搬到 P′，满足 OP × OP′ = R²。下面统一取 O=(0,0)、R=1。</text>
+
+  <rect x="35" y="110" width="1370" height="190" rx="16" class="card"/>
+  <text x="65" y="150" class="head">第 1 步：一个点怎么搬？离 O 远，就搬得近</text>
+  <line x1="100" y1="220" x2="650" y2="220" class="axis"/>
+  <circle cx="260" cy="220" r="5" class="center"/><text x="252" y="252" class="small">O</text>
+  <circle cx="300" cy="220" r="40" class="dash"/><text x="284" y="194" class="small">R=1</text>
+  <circle cx="340" cy="220" r="8" class="origpt"/><text x="328" y="198" class="body">P=2</text>
+  <circle cx="280" cy="220" r="8" class="newpt"/><text x="270" y="279" class="body">P′=1/2</text>
+  <path d="M332 220 L289 220" class="arrow"/>
+  <text x="720" y="205" class="formula">OP = 2  ⇒  OP′ = 1/2，因为 OP × OP′ = 1</text>
+  <text x="720" y="244" class="body">P、P′ 在同一条射线上。若 OP=1，点就在反演圆上，保持不动。</text>
+  <text x="720" y="276" class="small">反演圆是以 O 为圆心、半径 R 的圆；它用来标出“内外交换”的分界线。</text>
+
+  <rect x="35" y="320" width="1370" height="385" rx="16" class="card"/>
+  <text x="65" y="360" class="head">第 2 步：经过 O 的圆，为什么变成直线？拿圆心 (1,0)、半径 1 来算</text>
+  <text x="82" y="398" class="small">原图：圆上的点满足 x²+y²=2x</text>
+  <text x="815" y="398" class="small">像图：每个对应点的横坐标都是 1/2</text>
+  <!-- original circle panel -->
+  <line x1="100" y1="535" x2="650" y2="535" class="axis"/><line x1="175" y1="420" x2="175" y2="650" class="axis"/>
+  <circle cx="290" cy="535" r="115" class="old"/>
+  <circle cx="175" cy="535" r="5" class="center"/><text x="160" y="560" class="small">O</text>
+  <circle cx="405" cy="535" r="6" class="origpt"/><text x="415" y="540" class="small">A=(2,0)</text>
+  <circle cx="290" cy="420" r="6" class="origpt"/><text x="300" y="420" class="small">B=(1,1)</text>
+  <circle cx="290" cy="650" r="6" class="origpt"/><text x="300" y="655" class="small">C=(1,−1)</text>
+  <text x="175" y="684" class="small">橙色圆经过 O；圆心在 (1,0)。</text>
+  <!-- transformation arrow -->
+  <path d="M680 535 L760 535" class="arrow"/><text x="720" y="510" text-anchor="middle" class="small">反演</text>
+  <!-- image line panel -->
+  <line x1="835" y1="535" x2="1325" y2="535" class="axis"/><line x1="1065" y1="420" x2="1065" y2="650" class="axis"/>
+  <line x1="1122.5" y1="420" x2="1122.5" y2="650" class="new"/>
+  <circle cx="1122.5" cy="535" r="6" class="newpt"/><text x="1190" y="540" class="small">A′=(1/2,0)</text>
+  <circle cx="1122.5" cy="477" r="6" class="newpt"/><text x="1190" y="480" class="small">B′=(1/2,1/2)</text>
+  <circle cx="1122.5" cy="593" r="6" class="newpt"/><text x="1190" y="600" class="small">C′=(1/2,−1/2)</text>
+  <text x="835" y="684" class="small">三个像点都在蓝色直线 x′=1/2 上；圆上所有点都如此。</text>
+  <text x="65" y="438" class="formula">反演：x′=x/(x²+y²)，y′=y/(x²+y²)。原圆上 x²+y²=2x，所以 x′=1/2。</text>
+
+  <rect x="35" y="725" width="1370" height="355" rx="16" class="card"/>
+  <text x="65" y="765" class="head">第 3 步：不过 O 的直线，反过来变成经过 O 的圆</text>
+  <text x="82" y="802" class="small">原图：直线 y=1</text><text x="815" y="802" class="small">像图：圆心 (0,1/2)、半径 1/2</text>
+  <line x1="100" y1="945" x2="650" y2="945" class="axis"/><line x1="375" y1="825" x2="375" y2="1030" class="axis"/>
+  <line x1="130" y1="850" x2="620" y2="850" class="old"/>
+  <circle cx="375" cy="850" r="6" class="origpt"/><text x="385" y="850" class="small">(0,1)</text>
+  <circle cx="490" cy="850" r="6" class="origpt"/><text x="500" y="850" class="small">(1,1)</text>
+  <circle cx="260" cy="850" r="6" class="origpt"/><text x="180" y="850" class="small">(−1,1)</text>
+  <path d="M680 930 L760 930" class="arrow"/><text x="720" y="905" text-anchor="middle" class="small">反演</text>
+  <line x1="835" y1="945" x2="1325" y2="945" class="axis"/><line x1="1080" y1="825" x2="1080" y2="1030" class="axis"/>
+  <circle cx="1080" cy="897.5" r="47.5" class="new"/>
+  <circle cx="1080" cy="850" r="6" class="newpt"/><text x="1090" y="850" class="small">(0,1)</text>
+  <circle cx="1127.5" cy="897.5" r="6" class="newpt"/><text x="1185" y="900" class="small">(1/2,1/2)</text>
+  <circle cx="1032.5" cy="897.5" r="6" class="newpt"/><text x="900" y="900" class="small">(−1/2,1/2)</text>
+  <text x="65" y="1038" class="formula">像圆方程：x′² + (y′−1/2)² = (1/2)²；它经过 O。</text>
+  <text x="815" y="1038" class="small">原直线上的点越远，像越靠近 O；O 是极限位置，不是有限点的像。</text>
+</svg>
+

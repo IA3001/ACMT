@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1500" viewBox="0 0 2000 1500">
+<defs>
+  <marker id="solidArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#25364a"/></marker>
+  <marker id="failArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#c34232"/></marker>
+  <style>
+    text{font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#182433}
+    .title{font-size:40px;font-weight:700}.sub{font-size:23px;fill:#43566d}.nodeText{font-size:23px;font-weight:600;text-anchor:middle}.treeNodeText{font-size:20px;font-weight:600;text-anchor:middle}.edgeLabel{font-size:22px;font-weight:700;fill:#25364a}.body{font-size:24px}.small{font-size:21px}.panel{fill:#fff;stroke:#cbd5df;stroke-width:2}.node{fill:#f8fbff;stroke:#344b63;stroke-width:3}.end{fill:#fff8e8;stroke:#b1863a;stroke-width:3}.trie{fill:none;stroke:#344b63;stroke-width:3;marker-end:url(#solidArrow)}.fail{fill:none;stroke:#c56b58;stroke-width:2.5;stroke-dasharray:9 8;opacity:.85;marker-end:url(#failArrow)}.tree{fill:none;stroke:#708397;stroke-width:3;marker-end:url(#solidArrow)}
+  </style>
+</defs>
+<rect width="2000" height="1500" fill="#f3f6fa"/>
+<rect class="panel" x="20" y="20" width="1000" height="990" rx="18"/>
+<rect class="panel" x="1035" y="20" width="945" height="990" rx="18"/>
+<text class="title" x="55" y="78">① ACAM 状态图</text>
+<line x1="460" y1="68" x2="535" y2="68" class="trie"/><text class="sub" x="550" y="77">Trie 字符边 tr[v][c]</text>
+<line x1="770" y1="68" x2="845" y2="68" class="fail"/><text class="sub" x="860" y="77">fail[v]</text>
+<text class="sub" x="55" y="115">实线：读入字符；红色虚线箭头：当前节点指向 fail 目标；*：Pattern 在此结束</text>
+
+<g transform="translate(0 50)">
+<!-- Fail arrows are deliberately behind nodes. -->
+<path class="fail" d="M171 264 C155 190 240 142 416 145"/><!-- 1 -> 0 -->
+<path class="fail" d="M430 264 C405 205 420 165 453 153"/><!-- 3 -> 0 -->
+<path class="fail" d="M683 264 C640 202 565 165 501 151"/><!-- 10 -> 0 -->
+<path class="fail" d="M876 264 C820 165 650 132 503 144"/><!-- 13 -> 0 -->
+<path class="fail" d="M667 455 C610 270 545 205 499 169"/><!-- 11 -> 0 -->
+<path class="fail" d="M166 454 C255 350 516 308 650 293"/><!-- 2 -> 10 -->
+<path class="fail" d="M433 454 C361 385 252 330 202 302"/><!-- 4 -> 1 -->
+<path class="fail" d="M432 644 C332 550 199 514 156 494"/><!-- 5 -> 2 -->
+<path class="fail" d="M299 454 C405 365 720 311 846 294"/><!-- 6 -> 13 -->
+<path class="fail" d="M298 644 C430 574 728 520 844 496"/><!-- 7 -> 14 -->
+<path class="fail" d="M151 644 C292 540 533 520 649 489"/><!-- 8 -> 11 -->
+<path class="fail" d="M146 834 C301 738 551 713 650 695"/><!-- 9 -> 12 -->
+<path class="fail" d="M664 644 C615 520 497 389 449 304"/><!-- 12 -> 3 -->
+<path class="fail" d="M844 454 C760 390 535 345 458 303"/><!-- 14 -> 3 -->
+
+<!-- Trie character edges -->
+<path class="trie" d="M455 164 L220 270"/><text class="edgeLabel" x="318" y="208">h</text>
+<path class="trie" d="M482 165 L444 265"/><text class="edgeLabel" x="453" y="219">s</text>
+<path class="trie" d="M511 165 L671 266"/><text class="edgeLabel" x="583" y="211">e</text>
+<path class="trie" d="M525 151 L858 270"/><text class="edgeLabel" x="682" y="187">i</text>
+<path class="trie" d="M171 324 L155 454"/><text class="edgeLabel" x="142" y="396">e</text>
+<path class="trie" d="M218 310 L284 456"/><text class="edgeLabel" x="247" y="389">i</text>
+<path class="trie" d="M437 324 L437 454"/><text class="edgeLabel" x="448" y="395">h</text>
+<path class="trie" d="M684 324 L684 454"/><text class="edgeLabel" x="696" y="395">r</text>
+<path class="trie" d="M876 324 L876 454"/><text class="edgeLabel" x="889" y="395">s</text>
+<path class="trie" d="M155 514 L155 644"/><text class="edgeLabel" x="167" y="585">r</text>
+<path class="trie" d="M284 514 L284 644"/><text class="edgeLabel" x="296" y="585">s</text>
+<path class="trie" d="M437 514 L437 644"/><text class="edgeLabel" x="449" y="585">e</text>
+<path class="trie" d="M684 514 L684 644"/><text class="edgeLabel" x="696" y="585">s</text>
+<path class="trie" d="M155 704 L155 834"/><text class="edgeLabel" x="167" y="775">s</text>
+
+<!-- State circles -->
+<g><circle class="node" cx="480" cy="145" r="42"/><text class="nodeText" x="480" y="140">0</text><text class="nodeText" x="480" y="164">ε</text></g>
+<g><circle class="node" cx="190" cy="294" r="38"/><text class="nodeText" x="190" y="301">1 · h</text></g>
+<g><circle class="end" cx="155" cy="484" r="42"/><text class="nodeText" x="155" y="479">2 · he*</text></g>
+<g><circle class="end" cx="437" cy="294" r="42"/><text class="nodeText" x="437" y="301">3 · s*</text></g>
+<g><circle class="end" cx="437" cy="484" r="42"/><text class="nodeText" x="437" y="491">4 · sh*</text></g>
+<g><circle class="end" cx="437" cy="674" r="42"/><text class="nodeText" x="437" y="681">5 · she*</text></g>
+<g><circle class="node" cx="284" cy="484" r="42"/><text class="nodeText" x="284" y="491">6 · hi</text></g>
+<g><circle class="end" cx="284" cy="674" r="42"/><text class="nodeText" x="284" y="681">7 · his*</text></g>
+<g><circle class="end" cx="155" cy="674" r="42"/><text class="nodeText" x="155" y="681">8 · her*</text></g>
+<g><circle class="end" cx="155" cy="864" r="42"/><text class="nodeText" x="155" y="871">9 · hers*</text></g>
+<g><circle class="end" cx="684" cy="294" r="42"/><text class="nodeText" x="684" y="301">10 · e*</text></g>
+<g><circle class="node" cx="684" cy="484" r="42"/><text class="nodeText" x="684" y="491">11 · er</text></g>
+<g><circle class="end" cx="684" cy="674" r="42"/><text class="nodeText" x="684" y="681">12 · ers*</text></g>
+<g><circle class="node" cx="876" cy="294" r="42"/><text class="nodeText" x="876" y="301">13 · i</text></g>
+<g><circle class="end" cx="876" cy="484" r="42"/><text class="nodeText" x="876" y="491">14 · is*</text></g>
+</g>
+<text class="small" x="55" y="975">Fail 指针　1→0 · 2→10 · 3→0 · 4→1 · 5→2 · 6→13 · 7→14</text>
+<text class="small" x="55" y="999">　　　　　8→11 · 9→12 · 10→0 · 11→0 · 12→3 · 13→0 · 14→3</text>
+
+<!-- Fail tree -->
+<text class="title" x="1070" y="78">② 同一组状态的 Fail 树</text>
+<text class="sub" x="1070" y="115">树边 u → v 表示 fail[v] = u（方向与左图的 Fail 箭头相反）</text>
+<!-- tree edges -->
+<path class="tree" d="M1470 195 L1175 300"/><path class="tree" d="M1480 198 L1320 300"/><path class="tree" d="M1507 200 L1507 300"/><path class="tree" d="M1536 198 L1675 300"/><path class="tree" d="M1545 195 L1840 300"/>
+<path class="tree" d="M1175 372 L1175 480"/><path class="tree" d="M1320 372 L1320 480"/><path class="tree" d="M1327 370 C1360 415 1390 443 1410 480"/><path class="tree" d="M1507 372 L1507 480"/><path class="tree" d="M1675 372 L1675 480"/><path class="tree" d="M1840 372 L1840 480"/>
+<path class="tree" d="M1507 552 L1507 660"/><path class="tree" d="M1675 552 L1675 660"/><path class="tree" d="M1410 552 L1410 660"/>
+<!-- tree nodes -->
+<g><circle class="node" cx="1507" cy="165" r="40"/><text class="treeNodeText" x="1507" y="160"><tspan x="1507">0</tspan><tspan x="1507" dy="21">ε</tspan></text></g>
+<g><circle class="node" cx="1175" cy="336" r="36"/><text class="treeNodeText" x="1175" y="331"><tspan x="1175">1</tspan><tspan x="1175" dy="21">h</tspan></text></g>
+<g><circle class="end" cx="1320" cy="336" r="36"/><text class="treeNodeText" x="1320" y="331"><tspan x="1320">3</tspan><tspan x="1320" dy="21">s*</tspan></text></g>
+<g><circle class="end" cx="1507" cy="336" r="36"/><text class="treeNodeText" x="1507" y="331"><tspan x="1507">10</tspan><tspan x="1507" dy="21">e*</tspan></text></g>
+<g><circle class="node" cx="1675" cy="336" r="36"/><text class="treeNodeText" x="1675" y="331"><tspan x="1675">11</tspan><tspan x="1675" dy="21">er</tspan></text></g>
+<g><circle class="node" cx="1840" cy="336" r="36"/><text class="treeNodeText" x="1840" y="331"><tspan x="1840">13</tspan><tspan x="1840" dy="21">i</tspan></text></g>
+<g><circle class="end" cx="1175" cy="516" r="36"/><text class="treeNodeText" x="1175" y="511"><tspan x="1175">4</tspan><tspan x="1175" dy="21">sh*</tspan></text></g>
+<g><circle class="end" cx="1320" cy="516" r="36"/><text class="treeNodeText" x="1320" y="511"><tspan x="1320">12</tspan><tspan x="1320" dy="21">ers*</tspan></text></g>
+<g><circle class="end" cx="1410" cy="516" r="36"/><text class="treeNodeText" x="1410" y="511"><tspan x="1410">14</tspan><tspan x="1410" dy="21">is*</tspan></text></g>
+<g><circle class="end" cx="1507" cy="516" r="36"/><text class="treeNodeText" x="1507" y="511"><tspan x="1507">2</tspan><tspan x="1507" dy="21">he*</tspan></text></g>
+<g><circle class="end" cx="1675" cy="516" r="36"/><text class="treeNodeText" x="1675" y="511"><tspan x="1675">8</tspan><tspan x="1675" dy="21">her*</tspan></text></g>
+<g><circle class="node" cx="1840" cy="516" r="36"/><text class="treeNodeText" x="1840" y="511"><tspan x="1840">6</tspan><tspan x="1840" dy="21">hi</tspan></text></g>
+<g><circle class="end" cx="1507" cy="696" r="36"/><text class="treeNodeText" x="1507" y="691"><tspan x="1507">5</tspan><tspan x="1507" dy="21">she*</tspan></text></g>
+<g><circle class="end" cx="1675" cy="696" r="36"/><text class="treeNodeText" x="1675" y="691"><tspan x="1675">9</tspan><tspan x="1675" dy="21">hers*</tspan></text></g>
+<g><circle class="end" cx="1410" cy="696" r="36"/><text class="treeNodeText" x="1410" y="691"><tspan x="1410">7</tspan><tspan x="1410" dy="21">his*</tspan></text></g>
+<text class="small" x="1070" y="985">关键分支：13→6；14→7；3→14。</text>
+
+<!-- Examples and text scan -->
+<rect class="panel" x="20" y="1020" width="1960" height="455" rx="18"/>
+<text class="title" x="55" y="1080">③ 构造与匹配核对</text>
+<text class="body" x="65" y="1140">Pattern：he, she, his, hers, her, e, s, sh, ers, is（15 个状态，含根）</text>
+<text class="body" x="65" y="1190">BFS：fail[he(2)] = e(10)；fail[she(5)] = he(2)；fail[hers(9)] = ers(12)；fail[his(7)] = is(14)。</text>
+<text class="body" x="65" y="1240">T = ushershishe　　位置：  1  2  3  4  5  6  7  8  9 10 11</text>
+<text class="body" x="65" y="1285">字符：             u  s  h  e  r  s  h  i  s  h  e</text>
+<text class="body" x="65" y="1330">状态：             0  3  4  5  8  9  1  6  7  4  5</text>
+<text class="body" x="65" y="1385">输出：位置 3、10：sh；位置 4、11：she, he, e；位置 5：her；位置 6：hers, ers, s；位置 9：his, is, s。</text>
+<text class="body" x="65" y="1440">各位置匹配数：0,1,1,3,1,3,0,0,3,1,3；总数 16。离线计数：扫描 cnt[state]++，逆 BFS 累加 cnt[fail[v]] += cnt[v]。</text>
+</svg>
